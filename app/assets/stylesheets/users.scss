@@ -1,0 +1,22 @@
+body{
+  text-align: center;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li:first-child{
+  margin-top: 50px;
+}
+.btn-success{
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 767px) {
+body{background: lightgreen;}
+.signup{display: none;}
+.menu{display: block;}
+}
+@media screen and (max-width: 1200px) {
+.navbar-toggle{display: block;}
+}

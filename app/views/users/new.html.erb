@@ -1,0 +1,61 @@
+<h1>Sign up</h1>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with(model: @user, local: true) do |f| %>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+          <span class="sr-only">Bootstrap</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Sign up</a>
+      </div>
+      <div id="gnavi">
+        <ul class="menu">
+          <li><%= f.label :name %></li>
+          <li><%= f.text_field :name %></li>
+          <li><%= f.label :email %></li>
+          <li><%= f.email_field :email %></li>
+          <li><%= f.label :password %></li>
+          <li><%= f.password_field :password %></li>
+          <li><%= f.label :password_confirmation %></li>
+          <li><%= f.password_field :password_confirmation %></li>
+          <li><%= f.submit "Create my account", class: 'btn btn-success' %></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- <ul class="signup">
+  <li><%= f.label :name %></li>
+  <li><%= f.text_field :name %></li>
+  <li><%= f.label :email %></li>
+  <li><%= f.email_field :email %></li>
+  <li><%= f.label :password %></li>
+  <li><%= f.password_field :password %></li>
+  <li><%= f.label :password_confirmation %></li>
+  <li><%= f.password_field :password_confirmation %></li>
+  <li><%= f.submit "Create my account", class: 'btn btn-success' %></li>
+</ul> -->
+  <%# <%= f.label :name %>
+  <%# <%= f.text_field :name %>
+  <%# <%= f.label :email %>
+  <%# <%= f.email_field :email %>
+  <%# <%= f.label :password %>
+  <%# <%= f.password_field :password %>
+  <%# <%= f.label :password_confirmation %>
+  <%# <%= f.password_field :password_confirmation %>
+  <%# <%= f.submit "Create my account", class: 'btn btn-success' %>
+<% end %>
