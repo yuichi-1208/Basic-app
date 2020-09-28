@@ -66,3 +66,8 @@ gem 'bcrypt', '3.1.11'
 gem 'dotenv-rails'
 # メール
 gem 'letter_opener_web'
+# 動作確認
+gem 'faker'
+
+gem 'carrierwave'
+gem 'mini_magick'

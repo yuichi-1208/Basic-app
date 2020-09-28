@@ -14,6 +14,10 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
+    # newは設計図を基に家を作る大工さんの様な役割で、インスタンスを作る（インスタンス化）時に必要
+    # 今回の場合、テーブルが設計図で、レコードが実態？
+    # 以下の文は、contactテーブルの空のレコードを作成している感じ
+    # 以下の文があるおかげで、newビューからパラメーターを送ることができる様になる。
     @contact = Contact.new
   end
 

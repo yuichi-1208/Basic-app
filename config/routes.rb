@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" 
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
 
   root to: 'users#new'
 
@@ -14,6 +14,12 @@ Rails.application.routes.draw do
 
   resources :blogs do
     collection do#collection doはidなどを必要としない固有のルーティングを生成する
+      post :confirm
+    end
+  end
+
+  resources :feeds do
+    collection do
       post :confirm
     end
   end
