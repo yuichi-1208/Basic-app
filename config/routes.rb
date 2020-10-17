@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:create, :destroy]
 
   resources :blogs do
+    resources :comments
     collection do#collection doはidなどを必要としない固有のルーティングを生成する
       post :confirm
     end

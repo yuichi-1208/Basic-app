@@ -7,4 +7,15 @@
   <% else %>
     <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
+
+  <%= link_to '編集', edit_blog_path(@blog) %>
 <% end %>
+  <p>コメント一覧（ここから下の内容が重要）</p>
+  <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+  <div id="comments_area">
+    <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+    <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
+  </div>
+  <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+  <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
+  <%= link_to '戻る', blogs_path %>

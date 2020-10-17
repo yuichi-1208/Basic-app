@@ -39,6 +39,9 @@ class BlogsController < ApplicationController
     # もし値が見つからなかったらfind_byメソッドはnilを代入する
     # find_by(title: "タイトルA")
     @favorite = current_user.favorites.find_by(blog_id: @blog.id)
+
+    @comments = @blog.comments
+    @comment = @blog.comments.build
   end
 
   def edit
